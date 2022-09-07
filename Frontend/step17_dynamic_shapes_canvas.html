@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> dynamic_shapes</title>
+    <style>
+        canvas{
+            border: 2px solid;
+            margin: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="cni" width="500" height="500">
+   </canvas>
+    <script>
+        var ctx = document.getElementById("cni").getContext("2d");
+        // ctx.beginPath();
+        
+        for(var i=10;i<=500;i+=10){
+            ctx.beginPath();
+            ctx.strokeStyle = "red";
+            ctx.moveTo(i,0);
+            ctx.lineTo(i,500);
+            ctx.stroke();
+        }
+        for(var i=10;i<=500;i+=10){
+            ctx.beginPath();
+            ctx.strokeStyle = "green";
+            ctx.moveTo(0,i);
+            ctx.lineTo(500,i);
+            ctx.stroke();
+        }
+        for(var i=10;i<=500;i+=10){
+            ctx.beginPath();
+            ctx.strokeStyle = "yellow";
+            ctx.moveTo(i,0);
+            ctx.lineTo(500,i);
+            ctx.stroke();
+        }
+        for(var i=10;i<=500;i+=10){
+            ctx.beginPath();
+            ctx.strokeStyle = "orange";
+            ctx.moveTo(0,i);
+            ctx.lineTo(i,500);
+            ctx.stroke();
+        }
+        ctx.fillRect(100,300,100,300);
+        
+    </script>
+</body>
+</html>

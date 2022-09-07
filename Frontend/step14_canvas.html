@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <Style>
+        canvas{
+            border: 2px solid;
+        }
+    </Style>
+    <!-- <script>
+        var can = document.getElementById("cn");
+        var ctx = getContext("2d");
+        ctx.fill("hello",0,5);
+    </script> -->
+    </head>
+<body>
+    <canvas id="cn" width="400" height="400"></canvas>
+    <!-- <Style>
+        canvas{
+            border: 2px solid;
+        }
+    </Style> -->
+     <script>
+        var can = document.getElementById("cn");
+        var ctx =can.getContext("2d");
+        ctx.font = "bold 80px arial";
+        ctx.fillStyle = "green";
+        ctx.rotate((Math.PI/180)*20);
+        ctx.scale(1,1);
+        ctx.translate(10,40);
+        ctx.fillText("hello",0,0);
+        ctx.font = "bold 80px arial";
+        ctx.fillStyle = "yellow";
+        ctx.translate(30,60);
+        //ctx.stroke();
+        ctx.fillText("world",20,60);
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window_storage</title>
+    <script>
+        var user = null;
+        function adduser(){
+           user = document.getElementById("un").value;
+        }
+        function getuser(){
+            document.getElementById("uno").textContent = user;
+        }
+
+    </script>
+</head>
+<body>
+    <input id="un" type="text">
+    <button onmousedown="adduser()">add user name</button>
+    <button onmousedown="getuser()">get user name</button>
+
+    <h2>user name entered :<span id="uno"></span></h2>
+</body>
+</html>
