@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child selectors</title>
+    <style>
+        /* p:first-child{
+            border: 2px solid red;
+        }
+        p:last-child{
+            border: 2px solid red;
+        }
+        ul:last-child{
+            border: 2px solid red;
+            li:nth-child(3n-4){
+                border: 2px solid red;
+            } 
+            li:nth-child(4){
+                border: 2px solid red;
+            } 
+            li:nth-child(odd){
+                border: 2px solid red;
+            } 
+        } */
+        li:nth-child(3n+2){
+            border: 2px solid red;
+        } 
+        
+    </style>
+</head>
+<body>
+    <h>header</h>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ipsum officia rerum doloremque sit cumque provident laboriosam nihil est vitae. Ducimus explicabo quam repellat nisi necessitatibus tempora, vel dolorum perferendis.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt id hic rem. Ullam magni aperiam doloribus quos dolor aspernatur iste ipsam consequatur eum? Veniam aliquam eaque nulla quisquam totam tempore?
+    </p>
+    <ol>
+        <li>list items1</li>
+        <li>list items2</li>
+        <li>list items3</li>
+        <li>list items4</li>
+        <li>list items5</li>
+        <li>list items6</li>
+        <li>list items7</li>
+        <li>list items8</li>
+        <li>list items9</li>
+        <li>list items10</li>
+        <li>list items11</li>
+        <li>list items12</li>
+    </ol>
+    <ul>
+        <li>list items 1</li>
+        <li>list items 2</li>
+        <li>list items 3</li>
+        <li>list items 4</li>
+        <li>list items 5</li>
+    </ul>
+    <ul>
+        <li>list items 1</li>
+        <li>list items 2</li>
+        <li>list items 3</li>
+        <li>list items 4</li>
+        <li>list items 5</li>
+    </ul>
+    <ul>
+        <li>list items 1</li>
+        <li>list items 2</li>
+        <li>list items 3</li>
+        <li>list items 4</li>
+        <li>list items 5</li>
+    </ul>
+</body>
+</html>

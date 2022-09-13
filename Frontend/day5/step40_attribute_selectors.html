@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Selectors</title>
+    <style>
+        /* img[width='101']{
+            border: 5px dotted red;
+        } */
+        /* img[alt='superman']{
+            border: 2px solid;
+        } */
+        img[alt ~='super']{
+            border: 2px solid;
+        }
+        img[alt *='r']{
+            border: 2px solid;
+        }
+        /* img[alt $='man']{
+            border: 2px solid;
+        } */
+        /* img[alt ^='super']{
+            border: 2px solid;
+        } */
+    </style>
+</head>
+<body>
+    <img width="100" src="images/batman.jpg" alt="batman">
+    <img width="100" src="images/scarletwitch.jpg" alt="scarletwitch">
+    <img width="100" src="images/antman.jpg" alt="antman">
+    <img width="101" src="images/superman.jpg" alt="superman">
+    <img width="100" src="images/rajani.jpg" alt="rajani">
+    <img width="101" src="images/spiderman.jpg" alt="spiderman">
+    <img width="100" src="images/supergirl.jpg" alt="supergirl">
+    
+</body>
+</html>
