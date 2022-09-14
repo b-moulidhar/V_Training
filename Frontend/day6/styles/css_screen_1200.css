@@ -1,0 +1,16 @@
+section{
+    width: 1400px;
+    height: 600px;
+    background-color: yellow;
+}
+    article{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        
+    }
+    #photo{
+        background-image: url("images/scarletwitch.jpg");
+        height: 200px;
+        width: 200px;
+    }
