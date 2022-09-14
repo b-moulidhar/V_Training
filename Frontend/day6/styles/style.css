@@ -1,0 +1,40 @@
+h1{
+    text-align: center;
+    /* height: 100px; */
+    font:bold;
+    font-size: 80px;
+}
+
+.box2{
+   
+    /* background-image: url("styles/images/bat3_tn.jpg"); */
+    font-size: 20px;
+    text-align: center;
+    
+   
+}
+
+.box4{
+    text-align: justify;
+    font-size: 18px;
+}
+.box5{
+
+    text-align:justify;
+    font-size: 18px;
+}
+article{
+    text-align: left;
+    border: 2px solid;
+    height: auto;
+}
+p{
+    text-align: left;
+    width: 300px;
+}
+header{
+    text-align: left;
+    font-size: 40px;
+    font: bold;
+    height: 100px;
+}
