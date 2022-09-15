@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>windows</title>
+  
+    <script>
+        // var x= "hello boiss"
+        // var y = new Date();
+        // console.log(x.charAt(0));
+        // console.log(x.charAt(x.length-1));
+        // console.log(x.substring(2,8));
+        // console.log(x.slice(-5));
+        // console.log(x.slice(3,7));
+        // console.log(x.indexOf("i"));
+        // console.log(x.lastIndexOf("o"));
+        // console.log(x.indexOf("o",3));
+        // console.log(x.split(" ",2));
+        // console.log(x.replace("b","B"));
+        // console.log(x.toUpperCase());
+        // console.log(x.toLowerCase());
+        // console.log(y);
+        //var win=window.open("C:/Frontend/day6/step56_bootstrap101.html","bootstrap","status,height=400,width=500");
+       // win.window.bootstrap.close();
+     //  var cls ;//window.bootstrap.close();
+      // cls=alert("yoho");
+    //   cls = prompt();
+    // // cls=confirm("are you 18+");
+    // var win ;
+    // function openWin(){
+    //      win = window.open("http://google.com","google","status,height=400,width=500");
+    // }
+    // function closeWin(){
+    //     win.close();
+    // }
+    // function changeWin(){
+    //     win.location("https://github.com");
+    // }
+    // function alertFun(){
+    //     win=alert("you have clicked on alert");
+    // }
+    let count =0;
+    window.onload = function(){
+        wi = setInterval(function(){ 
+            if(count<5){
+                document.getElementById("intrvl").innerHTML += "hello again\n";
+                count++;
+            }
+            else{
+                console.log(count);
+                clearInterval(wi);
+            }
+            
+        }, 1000);
+    }
+    // function timSetout(){
+    //     win = setTimeout(() => {alert("you will be active for 2 sec")
+            
+    //     },2000);
+    // }
+   
+    
+
+
+
+
+
+        </script>
+</head>
+<body>
+    <h1>output:<span id="intrvl"></span></h1>
+    <button onclick="openWin()">open window</button>
+    <button onclick="closeWin()">close window</button>
+    <button onclick="alertFun()">alert</button>
+    <button onclick="changeWin()">change window</button>
+    <button onclick="timInt()">interval window</button>
+    <button onclick="timSetout()">timeout window</button> <br>
+    
+</body>
+</html>
