@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Layout2</title>
+    <style>
+        /* All the boxes are within this section including header and footer */
+         section{
+            width: 1020px;
+            background-color: bisque;
+            margin: 20px auto;
+            padding: 10px;
+            border: 2px solid;
+            background: linear-gradient(90deg, rgba(252,176,69,1) 0%, rgba(240,9,9,0.6839110644257703) 48%, rgba(252,176,69,1) 100%);
+        }
+        header{
+            display: block;
+            margin:10px auto;
+            width: 940px;
+            height: 70px; 
+            text-align: center;
+            margin-left: 30px;
+            background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(9,127,241,1) 49%, rgba(252,70,107,1) 100%);
+            color:chartreuse;
+        }
+        /* This has only boxes, it does not contain header or footer */
+        .container{
+            width: 1000px;
+            display: flex;
+            align-items: baseline;
+        }
+        .box1{
+            
+            height: 200px;
+            width: 300px;
+            color:chartreuse;
+            margin: 20px;
+            text-align: center;
+            background: linear-gradient(247deg, rgba(63,94,251,1) 0%, rgba(125,41,198,1) 48%, rgba(252,70,107,1) 100%);
+    
+        }
+        .box2{
+            
+            height: 300px;
+            width: 300px;
+            text-align: center;
+            margin: 20px;
+            background: linear-gradient(247deg, rgba(63,94,251,1) 0%, rgba(125,41,198,1) 48%, rgba(252,70,107,1) 100%);
+            color:chartreuse;
+        }
+        .box3{
+           
+            height: 350px;
+            width: 300px;
+            text-align: center;
+            margin: 20px;
+            background: linear-gradient(247deg, rgba(63,94,251,1) 0%, rgba(125,41,198,1) 48%, rgba(252,70,107,1) 100%);
+            color:chartreuse;
+        }
+        .box4{
+            
+            height: 300px;
+            width: 300px;
+            margin-bottom: 20px;
+            text-align: center;
+            background: linear-gradient(247deg, rgba(63,94,251,1) 0%, rgba(125,41,198,1) 48%, rgba(252,70,107,1) 100%);
+            color:chartreuse;
+        }
+        .box5{
+            
+            height: 350px;
+            width: 300px;
+            margin-bottom: 20px;
+            text-align: center; 
+            background: linear-gradient(247deg, rgba(63,94,251,1) 0%, rgba(125,41,198,1) 48%, rgba(252,70,107,1) 100%);
+            color:chartreuse;
+        }
+        .box6{
+            
+            height: 200px;
+            width: 300px;
+            margin-bottom: 20px;
+            text-align: center;
+            background: linear-gradient(247deg, rgba(63,94,251,1) 0%, rgba(125,41,198,1) 48%, rgba(252,70,107,1) 100%);
+            color:chartreuse;
+        }
+        .box7{
+            
+            height: 200px;
+            width: 300px;
+            text-align: center;
+            margin:20px;
+            background: linear-gradient(247deg, rgba(63,94,251,1) 0%, rgba(125,41,198,1) 48%, rgba(252,70,107,1) 100%);
+            color:chartreuse;
+        }
+        .box8{
+            
+            height: 300px;
+            width: 300px;
+            text-align: center;
+            margin:20px;
+            background: linear-gradient(247deg, rgba(63,94,251,1) 0%, rgba(125,41,198,1) 48%, rgba(252,70,107,1) 100%);
+            color:chartreuse;
+        }
+        .box9{
+           
+            height: 350px;
+            width: 300px;
+            text-align: center;
+            margin:20px;
+            background: linear-gradient(247deg, rgba(63,94,251,1) 0%, rgba(125,41,198,1) 48%, rgba(252,70,107,1) 100%);
+            color:chartreuse;
+        }
+        /* the last box at the bottom the page */
+        footer{
+            display: block;
+            margin:10px auto;
+            width: 940px;
+            height: 70px; 
+            text-align: center;
+            margin-left: 30px;
+            background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(9,127,241,1) 49%, rgba(252,70,107,1) 100%);
+            color:chartreuse;
+        }
+    </style>
+    
+</head>
+<body>
+    <section>
+    <header>
+    <h1></h1>
+    </header>
+<div class="container">
+    <div><!-- first div tag with 3 boxes in the same column  -->
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    </div>
+    <div><!-- second div tag with 3 boxes in the same column -->
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+    </div>
+    <div><!-- third div tag with 3 boxes in the same column -->
+    <div class="box7"></div>
+    <div class="box8"></div>
+    <div class="box9"></div>
+    </div>
+</div>
+<footer> <h1></h1> </footer>
+</section>
+</body>
+</html>
