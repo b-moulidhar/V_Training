@@ -23,6 +23,16 @@
             line-height: 100px;
             text-align: center;
         }
+        .container div div{
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            margin: 5px;
+            /* float: left; */
+            font: 35px;
+            line-height: 50px;
+            /* text-align: center; */
+        }
         .container div:hover{
             background-color: violet;
             box-shadow: 5px 5px 5px;
@@ -43,12 +53,14 @@
             container = document.getElementsByClassName("container")[0];
             container.addEventListener("click",clickHandler);
         ri = setInterval(function(){
-            let box = document.createElement("div");
+            let box = document.createElement('div');
+            let box1 = document.createElement('div');
             box.textContent=count;
-            container.appendChild(box);
+            var div1 = container.appendChild(box);
+            div1.appendChild(box1);
             count++;
             if(count>20){
-                clearInterval(ri)
+                clearInterval(ri);
             }
 
         },100)
@@ -59,8 +71,8 @@
 </head>
 <body>
     
+    <button>add box</button>
     <div class="container">
-        <button>add box</button>
 
     </div>
     <h1></h1>
