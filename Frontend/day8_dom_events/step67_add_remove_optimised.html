@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add remove</title>
+    <style>
+        .container{
+            width: 600px;
+            height: 800px;
+            background-color: greenyellow;
+            overflow: auto;
+        
+        }
+        .container div{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            margin: 5px;
+            float: left;
+            font: 35px;
+            line-height: 100px;
+            text-align: center;
+        }
+        .container div:hover{
+            background-color: violet;
+            box-shadow: 5px 5px 5px;
+        }
+    </style>
+    <script>
+         let count = 1;// container = document.getElementsByClassName("container")[0];
+        // var buttons = document.getElementsByTagName("button");
+        let container=null;
+        let ri=null;
+        function clickHandler(evnt){
+            if(!evnt.target.getAttribute("class",container)){
+           container.removeChild(evnt.target);
+        }
+    }
+      
+        function init(){
+            container = document.getElementsByClassName("container")[0];
+            container.addEventListener("click",clickHandler)
+        ri = setInterval(function(){
+            let box = document.createElement("div");
+            box.textContent=count;
+            container.appendChild(box);
+            count++;
+            if(count>20){
+                clearInterval(ri)
+            }
+
+        },100)
+        }
+           
+        document.addEventListener("DOMContentLoaded",init);
+    </script>
+</head>
+<body>
+    <button>add box</button>
+    
+    <div class="container"></div>
+    <h1></h1>
+</body>
+</html>

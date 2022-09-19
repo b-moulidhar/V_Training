@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events flow</title>
+    <style>
+        .container{
+            width: 600px;
+            height: 500px;
+            margin: 100px auto;
+            border: 1px solid transparent;
+            background-color: yellow;
+        }
+        .nested{
+            width: 450px;
+            height: 350px;
+            margin: 50px auto;
+            border: 1px solid transparent;
+            background-color: coral;
+        }
+        .box{
+            width: 250px;
+            height: 200px;
+            margin: 25px auto;
+            border: 1px solid transparent;
+            background-color: rgb(57, 21, 8);
+        }
+    </style>
+    <script>
+        function mouseHandler(evnt){
+            document.getElementById("log").innerHTML+="<p>type of event: "+evnt.currentTarget.getAttribute("class")+"</p";
+        }
+        function init(){
+            // document.getElementsByClassName("box")[0].addEventListener("click",mouseHandler);
+            document.getElementsByClassName("nested")[0].addEventListener("click",mouseHandler);
+            document.getElementsByClassName("container")[0].addEventListener("click",mouseHandler);
+            document.getElementsByClassName("nested")[0].addEventListener("click",mouseHandler,true);
+            document.getElementsByClassName("container")[0].addEventListener("click",mouseHandler,true);
+            document.getElementsByClassName("box")[0].addEventListener("click",mouseHandler,true);
+        }
+        document.addEventListener("DOMContentLoaded",init)
+    </script>
+</head>
+<body>
+    <div id="log"></div>
+        <div class="container">
+            <div class="nested">
+                <div class="box"></div>
+            </div>
+        </div>
+    <!-- </div> -->
+</body>
+</html>
