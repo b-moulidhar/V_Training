@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Bind Call</title>
+    <script>
+        var ironman = {
+            firstnname:"tony",
+            lastname:"stark",
+            power:7,
+            fullname: function(arg1,arg2){
+                return arg1+" "+this.firstnname+" "+this.lastname+ " from "+arg2;
+            }
+        }
+        var spiderman = {
+            firstnname:"peter",
+            lastname:"parker",
+            power:6
+        }
+        var hulk = {
+            firstnname:"bruce",
+            lastname:"benner",
+            power:6
+        }
+        console.log(ironman.fullname("love you bot","New York"));
+        //call
+        console.log(ironman.fullname.call(spiderman,"im spiderman","New york"));//max infinite arguments
+        console.log(ironman.fullname.call(hulk,"Hulk","Ohio"));
+        //apply
+        console.log(ironman.fullname.apply(spiderman,["im spiderman","New york"]));//max two arguments second arg is array
+        console.log(ironman.fullname.apply(hulk,["Hulk","Ohio"]));
+        //bind
+        var spiderDet = ironman.fullname.bind(spiderman);
+        var hulkDet = ironman.fullname.bind(hulk);
+        console.log(spiderDet("im spiderman","New york"));//max two arguments second arg is array
+        console.log(hulkDet("Hulk","Ohio"));
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

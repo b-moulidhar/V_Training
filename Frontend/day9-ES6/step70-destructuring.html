@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+    <script>
+        var animals={
+            title:"dog",
+            petname:"doberman",
+            city:"vijayanagar",
+            power:20
+        }
+        // var animaltemp = animals;
+        // console.log(animaltemp.title)
+        // animaltemp.title = "human"; 
+        // console.log(animaltemp.title)
+        // console.log(animals.title)
+
+        // var animaltitle = animals.title;
+        // var animalpetname = animals.petname;
+        // var animalcity = animals.city;
+        // var animalpower = animals.power;
+        // animaltitle = "human";
+        // console.log(animaltitle)
+        // console.log(animals.title)
+
+        // var animaltitle = animals.title;
+        // var animalpetname = animals.petname;
+        // var animalcity = animals.city;
+        // var animalpower = animals.power;
+        // animaltitle = "human";
+        // console.log(animaltitle)
+        // console.log(animals.title)
+
+        // var {title : animaltitle,petname:animalpetname,city:animalcity,power:animalpower} = animals
+        // animaltitle = "human";
+        // console.log(animaltitle);
+        // console.log(animals.title);
+        
+        // var {title : title,petname:petname,city:city,power:power} = animals
+        // title = "human";
+        // console.log(title);
+        // console.log(animals.title);
+
+        // var {title,petname,city,power} = animals
+        // title = "human";
+        // console.log(title);
+        // console.log(animals.title);
+
+        // var {title} = animals
+        // title = "human";
+        // console.log(title);
+        // console.log(animals.title);
+
+        // animals = ['doberman','pug','labrador','husky'];
+        //  var [firstdog,seconddog,thirddog,fourthdog]=animals;
+        //  console.log(seconddog);
+        //  console.log(fourthdog.toUpperCase());
+        //  console.log(thirddog.toUpperCase().length);
+        
+        var vals = JSON.parse(JSON.stringify(animals));
+        console.log(JSON.stringify(animals))
+        console.log(vals.petname);
+        vals.petname="doggo";
+        console.log(vals.petname);
+        console.log(animals.petname)
+
+        //preferred
+        // var vals = { ...animals };
+        // console.log(vals.petname);
+        // vals.petname="doggo";
+        // console.log(vals.petname);
+        // console.log(animals.petname)
+
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>func improvement</title>
+    <script>
+        // function summer(n1,n2){
+        //     return n1+n2;
+        // }
+        // console.log(summer(8,9));
+
+        // default parameters
+        // function summer(n1=0,n2=0){
+        //     return n1+n2;
+        // }
+        // console.log(summer(8));
+
+        // function summer(n1,n2){
+        //     return n1+n2;
+        // }
+        // console.log(summer(8));
+        // console.log(summer(8,9));
+        // console.log(summer(8,9,10));
+        // console.log(summer(8,9,10,11));
+        // console.log(summer(8,9,10,11,12));
+
+        // function summer(){
+        //     return arguments.length;
+        // }
+        // console.log(summer(8));
+        // console.log(summer(8,9));
+        // console.log(summer(8,9,10));
+        // console.log(summer(8,9,10,11));
+        // console.log(summer(8,9,10,11,12));
+
+        //ES3
+        // function summer(){
+        //     var add = 0;
+        //     for(var i=0;i<arguments.length;i++){
+        //         add = add+arguments[i];
+        //     }
+        //     return add;
+        // }
+        // console.log(summer(8));
+        // console.log(summer(8,9));
+        // console.log(summer(8,9,10));
+        // console.log(summer(8,9,10,11));
+        // console.log(summer(8,9,10,11,12));
+
+        //ES5 which is standardized as ES6
+        //      var add = 0;
+        //    function summer(...val){
+        // for(var i=0;i<val.length;i++){
+        //     add = add+val[i];
+        //     }
+        //     return add;
+        // }
+        // console.log(summer(8));
+        // console.log(summer(8,9));
+        // console.log(summer(8,9,10));
+        // console.log(summer(8,9,10,11));
+        // console.log(summer(8,9,10,11,12));
+
+        // using reduce
+        function summer(...val){
+            return val.reduce(function(initialval, num,index,array){
+                console.log("initial value"+initialval+"value"+num);
+                return initialval+num;
+            },0)
+        }
+        console.log(summer(8));
+        console.log(summer(8,9));
+        console.log(summer(8,"hii",10));
+        console.log(summer(8,9,10,11));
+        console.log(summer(8,9,10,11,12));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

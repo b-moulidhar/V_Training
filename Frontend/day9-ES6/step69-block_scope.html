@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>block scope</title>
+    <script>
+        var animal = {
+            name:"dog",
+            power:7
+        };
+        function varScope(){
+            console.log(j)
+            for(var j=0;j<20;j++){
+                console.log(j)
+            }
+            console.log(j);
+        }
+        function letScope(){
+            if(animal.power>3){
+                let temp = animal.name;
+                animal.name +=" is strong"
+                console.log(animal.name);
+            }
+            //console.log(temp); // show undefined because of let Scope
+        }
+        function constScope(){
+            if(animal.power>3){
+                // const temp ; cannot be undefined
+                const temp = animal.name;
+                animal.name +=" is strong"
+                console.log(temp)
+            }
+            //console.log(temp);
+        }
+        varScope();
+        letScope();
+        constScope();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
