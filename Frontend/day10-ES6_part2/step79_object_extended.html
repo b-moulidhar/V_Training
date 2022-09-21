@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object extended</title>
+    <script>
+        // var hero = {title:"batman"};
+        // var hero = new Object({title:"batman"}) 
+
+        // var hero = Object.create(null);
+        // Object.defineProperty(hero,"title",{value:"Batman"});
+        // console.log(hero.title);
+        // hero.title ="joker";
+        // console.log(hero.title);
+
+        // var hero = Object.create(null);
+        // Object.defineProperty(hero,"title",{value:"Batman",writable:true});
+        // console.log(hero.title);
+        // hero.title ="joker";
+        // console.log(hero.title);
+
+        var human = Object(null);
+        Object.defineProperty(human,"version",{value:200,enumerable:false})
+        var hero = Object.create(human);
+        //object descriptable
+        Object.defineProperty(hero,"title",{value:"Batman",writable:true,enumerable:true,configurable:true});
+        console.log(hero.title);
+        hero.title ="joker";
+        console.log(hero.title);
+        console.log("--------------------------");
+        for(var pro in hero){
+            console.log(pro,hero[pro]);
+        }
+        
+        Object.defineProperty(hero,"title",{value:"batman",writable:false,enumerable:true})
+        console.log("--------------------------");0
+        for(var pro in hero){
+            console.log(pro,hero[pro]);
+        }
+        Object.defineProperty(hero,"title",{value:"joker",writable:false,enumerable:true})
+        console.log("--------------------------");
+        for(var pro in hero){
+            console.log(pro,hero[pro]);
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

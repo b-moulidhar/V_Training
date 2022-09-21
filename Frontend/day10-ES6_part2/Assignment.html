@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment day10</title>
+    <script>
+        var fpromise = new Promise(function(resolve,reject){
+                setTimeout(function(){
+                    if(true){
+                        console.log("first promise");
+                        resolve(spromise());
+                            // var spromise = new Promise(function() {
+                            //     setTimeout(function () {
+                            //         if (true) {
+                            //             resolve("promise kept by second");
+                            //         }
+                            //         else {
+                            //             reject("promise broken by second");
+                            //         }
+                            //     }, 1000);
+                            // })
+                            
+                        }
+                        else{
+                            reject("promise broken by first");
+                        }
+                    },1000);
+                });
+                
+                var spromise = function(){
+                 return new Promise(function(resolve,reject) {
+                    setTimeout(function () {
+                        if (true) {
+                            resolve("promise kept by second");
+                        }
+                        else {
+                            reject("promise broken by second");
+                        }
+                    }, 1000);
+                })
+            }
+                
+        fpromise.then(function(res){
+            return console.log(res);}
+            ).catch(function(rej){
+                return console.log(rej);}
+            ).finally(function(){
+                console.log("promise completed");
+            });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

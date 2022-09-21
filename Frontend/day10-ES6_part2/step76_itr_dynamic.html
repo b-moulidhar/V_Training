@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterators</title>
+    <script>
+        var nums = [1,2,3,4,5,6,7,8,9];
+    
+    setInterval(function(){
+            nums.push(Math.round(Math.random()*200));
+            document.getElementById("log").innerText = nums.join();
+        },2000);
+         var itr = nums[Symbol.iterator]();
+        function getVals(){
+            // nums.forEach(function(val){
+            //     console.log(val);});
+            console.log(itr.next().value);
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="getVals()">get values</button>
+    <p id="log"></p>
+</body>
+</html>

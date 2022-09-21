@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+    <script>
+        var prom =new Promise(function(resolve,reject){
+            setTimeout(function(){
+                if(false){
+                    resolve("Promise kept");
+                }
+                else{
+                    reject("Promise broken");
+                }
+            },2000);
+        });
+        // prom.then(function(mssg){console.log("success ",mssg)}
+        // ).catch(function(err){console.log("Error ",err)}
+        // ).finally(function(){console.log("promise completed")});
+
+    //     prom.then(function(mssg){
+    //         console.log("success ",mssg);
+    //         document.getElementsByTagName("li")[0].innerText = mssg;
+    //     }
+    //     ).catch(function(err){
+    //         console.log("Error ",err)
+    //         document.getElementsByTagName("li")[1].innerText = err;
+    // }
+    //     ).finally(function(){console.log("promise completed")});
+
+        // prom.then(function(mssg){
+        //     console.log("success ",mssg);
+        //     document.getElementsByTagName("li")[0].innerText = mssg;
+        //     return mssg.toUpperCase();
+        // }).then(function(mssg){
+        //     console.log("success ",mssg);
+        //     document.getElementsByTagName("li")[1].innerText = mssg;
+        //     return mssg.toLowerCase();
+        // }).then(function(mssg){
+        //     console.log("success ",mssg);
+        //     document.getElementsByTagName("li")[2].innerText = mssg;
+        // }
+        // ).catch(function(err){
+        //     console.log("Error ",err)
+        //     document.getElementsByTagName("li")[1].innerText = err;
+        // }
+        // ).finally(function(){console.log("promise completed")});
+        //
+        prom.then(function(mssg){
+            console.log("success ",mssg);
+            document.getElementsByTagName("li")[0].innerText = mssg;
+            
+        },function(err){
+            console.log("error ",err);
+            document.getElementsByTagName("li")[1].innerText = err;
+           
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

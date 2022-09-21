@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi promises</title>
+    <script>
+        var fpromise = function(){
+            return new Promise(function(resolve,reject){
+                setTimeout(function(){
+                    if(true){
+                        resolve("promise kept by first");
+                    }
+                    else{
+                        reject("promise broken by first");
+                    }
+                },2000);
+            })
+        }
+        var spromise = function(){
+            return new Promise(function(resolve,reject){
+                setTimeout(function(){
+                    if(true){
+                        resolve("promise kept by second");
+                    }
+                    else{
+                        reject("promise broken by second");
+                    }
+                },1000);
+            })
+        }
+        var tpromise = function(){
+            return new Promise(function(resolve,reject){
+                setTimeout(function(){
+                    if(true){
+                        resolve("promise kept by third");
+                    }
+                    else{
+                        reject("promise broken by third");
+                    }
+                },3000);
+            })
+        }
+
+        // Promise.all([fpromise(),spromise(),tpromise()]).then(function(res){
+        //     return console.log(res);}
+        //     ).catch(function(rej){
+        //         return console.log(rej);}
+        //     ).finally(function(){
+        //         console.log("promise completed");
+        //     });
+
+        Promise.race([fpromise(),spromise(),tpromise()]).then(function(res){
+            return console.log(res);}
+            ).catch(function(rej){
+                return console.log(rej);}
+            ).finally(function(){
+                console.log("promise completed");
+            });
+
+        // Promise.any([fpromise(),spromise(),tpromise()]).then(function(res){
+        //     return console.log(res);}
+        //     ).catch(function(rej){
+        //         return console.log(rej);}
+        //     ).finally(function(){
+        //         console.log("promise completed");
+        //     });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
