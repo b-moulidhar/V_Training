@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Json</title>
+    <style>
+        .container{
+            width: 777px;
+            background-color: aqua;
+            height: 300px;
+            overflow: auto;
+            margin: 20px auto;
+        }
+        .container div{
+            width: 350px;
+            margin: 5px;
+            padding: 10px;
+            background-color: rgb(9, 158, 108);
+            float: left;
+        }
+        .container div:hover{
+            background-color: rgb(4, 54, 37);
+        }
+
+    </style>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("readystatechange",xhrHandler);
+        function xhrHandler(evnt){
+            // console.log(evnt.target.responseText);
+            if(evnt.target.readyState === 4){
+            // console.log(JSON.parse(evnt.target.responseText).root.participant.length);
+            let par = JSON.parse(evnt.target.responseText).root.participant;
+            par.forEach(val => {
+                document.getElementsByClassName("container")[0].innerHTML += `
+                <div>
+                    <h2>${val.firstname+" "+val.lastname}</h2>
+                    <h3>email : ${val.email}</h3>
+                    <h3>city : ${val.city}</h3>
+                </div>
+                `
+                
+            });
+            }
+        }
+        function clickHandler(){
+            xhr.open("get","data.json",true);
+            xhr.send();
+        }
+        function init(){
+            document.getElementsByTagName("button")[0].addEventListener("click",clickHandler);
+        }
+        document.addEventListener("DOMContentLoaded",init);
+    </script>
+</head>
+<body>
+    <button>get data</button>
+    <div class="container">
+        <!-- <div>
+            <h2>fname lname</h2>
+            <h3>email</h3>
+            <h3>city</h3>
+        </div> -->
+    </div>
+</body>
+</html>

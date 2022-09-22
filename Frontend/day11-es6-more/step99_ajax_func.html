@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax function</title>
+    <style>
+        button{
+            width: 620px;
+            margin: 10px auto;
+            display: block;
+        }
+        .container{
+            width: 805px;
+            margin: 10px auto;
+            padding: 10px;
+            overflow: auto;
+            background-color: blueviolet;
+            color: azure;
+            text-align: justify;
+            
+        }
+        .container div{
+            width: 372px;
+            background-color: lightgreen;
+            margin: 5px;
+            padding: 10px;
+            font-family: sans-serif;
+            font-weight: bold;
+            float: left;
+
+        }
+        .container div:hover{
+           
+            background-color: rgb(21, 210, 21);
+    
+        }
+    </style>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("readystatechange",readystatechangeHandler);
+        function readystatechangeHandler(){
+            console.log("state ",xhr.readyState);
+            if(xhr.readyState === 4){
+                // document.getElementsByClassName("container")[0].textContent = xhr.responseText;
+               // document.getElementsByClassName("container")[0].textContent = xhr.responseXML;
+               for(var i=0;i< xhr.responseXML.getElementsByTagName("participant").length;i++){
+                //    console.log(xhr.responseXML.getElementsByTagName("participant")[i].getElementsByTagName("firstname")[0].firstChild.nodeValue);
+                //document.getElementsByClassName("container")[0].innerHTML += "<div>"+xhr.responseXML.getElementsByTagName("participant")[i].getElementsByTagName("firstname")[0].firstChild.nodeValue+"</div>";
+                var participant = xhr.responseXML.getElementsByTagName("participant")[i];
+                // document.getElementsByClassName("container")[0].innerHTML+=`
+                // <div>
+                //     <h2>${participant.querySelector("firstname").textContent+" "+participant.querySelector("lastname").textContent} </h2>
+                //     <h3>email :${participant.querySelector("email").textContent}</h3>
+                //     <h3>city :${participant.querySelector("city").textContent}</h3>
+                // </div>
+                // `
+                document.getElementsByClassName("container")[0].innerHTML += document.getElementById("mytemp").innerHTML
+                .replace("{firstname}",participant.querySelector("firstname").textContent)
+                .replace("{lastname}",participant.querySelector("lastname").textContent)
+                .replace("{email}",participant.querySelector("email").textContent)
+                .replace("{city}",participant.querySelector("city").textContent)
+               }
+            }
+        }
+        function clickHandler(){
+            xhr.send();
+        }
+        function init(){
+            xhr.open("get","data.xml",true)
+           // document.querySelector("button").addEventListener("click",clickHandler);
+            document.getElementsByTagName("button")[0].addEventListener("click",clickHandler);
+        }
+        document.addEventListener("DOMContentLoaded",init);
+    </script>
+</head>
+<body>
+    <button>get data</button>
+    <div class="container">
+        <!-- <div>
+            <h2>firstname lastname</h2>
+            <h3>email</h3>
+            <h3>city</h3>
+        </div> -->
+    </div>
+    <template id="mytemp">
+        <div>
+            <h2>{firstname} {lastname}</h2>
+            <h3>{email}</h3>
+            <h3>{city}</h3>
+        </div>
+    </template>
+</body>
+</html>

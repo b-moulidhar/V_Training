@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <script type="module">
+        import Hello from "./modules/myclass.js"
+        var emp = new Hello('Harshitha','R','5435','Sneha');
+        console.log(emp.fullname());
+        console.log("access static using instance",emp.version);
+        console.log("access static using class",Hello.version);
+        console.log(emp.emp_id);
+        console.log(emp.emp_id = 5435);
+        console.log(emp.canWalk())
+        console.log(emp.fullname());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

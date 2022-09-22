@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         class Person{
+            constructor(cname){
+                this.name = cname;
+            }
+            canWalk(){
+                return this.name+" can walk";
+            }
+            sayName(){
+                return this.name;
+            }
+        }
+        class Myclass extends Person{
+            fname = "Moulidhar";
+            lname = "B";
+            #emp_id = 5441;
+            static version = 2023;
+            constructor(efname,elname,eid,name){
+                super(name);
+                this.fname = efname;
+                this.lname = elname
+                this.emp_id = eid;
+            }
+            fullname(){
+                return this.fname+" "+this.lname;
+            }
+            static getVersion(){
+                return this.version;
+            }
+            get emp_id(){
+                return this.#emp_id
+            }
+            set emp_id(nemp_id){
+                this.#emp_id = nemp_id;
+            }
+        }
+        // class Person{
+        //     constructor(cname){
+        //         this.name = cname;
+        //     }
+        //     canWalk(){
+        //         return this.name+" can walk";
+        //     }
+        //     sayName(){
+        //         return this.name;
+        //     }
+        // }
+        var emp = new Myclass('Harshitha','R','5435','Sneha');
+        console.log(emp.fullname());
+        console.log("access static using instance",emp.version);
+        console.log("access static using class",Myclass.version);
+        console.log(emp.emp_id);
+        console.log(emp.emp_id = 5435);
+        console.log(emp.canWalk())
+        console.log(emp.fullname());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
