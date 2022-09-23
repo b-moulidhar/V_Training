@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <style>
+        button{
+            margin: 20px auto;
+            display: block;
+        }
+        canvas{
+            border: 2px solid;
+            margin: 10px auto;
+            display: block;
+        }
+        #can{
+            width: 300px;
+            border: 1px solid;
+        }
+    </style>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("readystatechange",xhrHandler);
+        function xhrHandler(evnt){
+            // console.log(evnt.target.responseText);
+            if(evnt.target.readyState === 4){
+             //console.log(JSON.parse(evnt.target.responseText).data.length);
+            let par = JSON.parse(evnt.target.responseText).data;
+            for(var i =0;i<par.length;i++){
+            // par.forEach(val,index => {
+                var No_of_case = par[i].casesHandled;
+                var color = par[i].col;
+                var agent = par[i].agentName;
+                console.log(No_of_case,color,agent);
+                var ctx = document.getElementById("cni").getContext("2d");
+                ctx.beginPath();
+               
+                ctx.moveTo(750, 700);
+                ctx.lineTo(100, 700);
+                ctx.lineTo(100, 100);
+                
+                ctx.stroke();
+                ctx.closePath();
+                
+                ctx.beginPath();
+                ctx.fillStyle = par[0].col;
+                ctx.moveTo(150,700);
+                ctx.lineTo(150, 700-par[0].casesHandled);
+                ctx.lineTo(200, 700-par[0].casesHandled);
+                ctx.lineTo(200,700);
+                ctx.font = "bold 12px arial";
+                ctx.fillText(par[0].agentName,150,720);
+                ctx.font = "bold 12px arial";
+                ctx.fillText(par[0].casesHandled,160,690-par[0].casesHandled);
+                ctx.fill();
+                ctx.stroke();
+                ctx.closePath();
+
+                ctx.beginPath();
+                ctx.fillStyle = par[1].col;
+                ctx.moveTo(250,700);
+                ctx.lineTo(250,700-par[1].casesHandled);
+                ctx.lineTo(300,700-par[1].casesHandled);
+                ctx.lineTo(300,700);
+                ctx.font = "bold 12px arial";
+                ctx.fillText(par[1].agentName,250,720);
+                ctx.font = "bold 12px arial";
+                ctx.fillText(par[1].casesHandled,260,690-par[1].casesHandled);
+                ctx.fill();
+                ctx.stroke();
+                ctx.closePath();
+
+                ctx.beginPath();
+                ctx.fillStyle = par[2].col;
+                ctx.moveTo(350,700);
+                ctx.lineTo(350,700-par[2].casesHandled);
+                ctx.lineTo(400,700-par[2].casesHandled);
+                ctx.lineTo(400,700);
+                ctx.font = "bold 12px arial";
+                ctx.fillText(par[2].agentName,350,720);
+                ctx.font = "bold 12px arial";
+                ctx.fillText(par[2].casesHandled,360,690-par[2].casesHandled);
+                ctx.fill();
+                ctx.stroke();
+                ctx.closePath();
+
+                ctx.beginPath();
+                ctx.fillStyle = par[3].col;
+                ctx.moveTo(450,700);
+                ctx.lineTo(450,700-par[3].casesHandled);
+                ctx.lineTo(500,700-par[3].casesHandled);
+                ctx.lineTo(500,700);
+                ctx.font = "bold 12px arial";
+                ctx.fillText(par[3].agentName,450,720);
+                ctx.font = "bold 12px arial";
+                ctx.fillText(par[3].casesHandled,460,690-par[3].casesHandled);
+                ctx.fill();
+                ctx.stroke();
+                ctx.closePath();
+
+                ctx.beginPath();
+                ctx.fillStyle = par[4].col;
+                ctx.moveTo(550,700);
+                ctx.lineTo(550,700-par[4].casesHandled);
+                ctx.lineTo(600,700-par[4].casesHandled);
+                ctx.lineTo(600,700);
+                ctx.font = "bold 12px arial";
+                ctx.fillText(par[4].agentName,550,720);
+                ctx.font = "bold 12px arial";
+                ctx.fillText(par[4].casesHandled,560,690-par[4].casesHandled);
+                ctx.fill();
+                ctx.stroke();
+                ctx.closePath();
+
+                ctx.beginPath();
+                ctx.fillStyle = par[5].col;
+                ctx.moveTo(650,700);
+                ctx.lineTo(650,700-par[5].casesHandled);
+                ctx.lineTo(700,700-par[5].casesHandled);
+                ctx.lineTo(700,700);
+                ctx.font = "bold 12px arial";
+                ctx.fillText(par[5].agentName,650,720);
+                ctx.font = "bold 12px arial";
+                ctx.fillText(par[5].casesHandled,660,690-par[5].casesHandled);
+                ctx.fill();
+                ctx.stroke();
+                ctx.closePath();
+
+                ctx.beginPath();
+                ctx.font = "bold 20px arial";
+               // ctx.rotate((Math.PI/180)*20);
+                ctx.fillText("Agent Names",300,750);
+                ctx.fillText("No of cases handled",300,250);
+                ctx.stroke();
+                ctx.closePath();
+                
+                // ctx.lineTo(100, 200);
+                // ctx.lineTo(100, 100);
+                // ctx.strokeStyle = "black";
+                ctx.font = "bold 16px arial";
+                ctx.fillStyle = "black";
+                ctx.fillText("100 -",65,600);
+                ctx.fillText("200 -",65,500);
+                ctx.fillText("300 -",65,400);
+                ctx.fillText("400 -",65,300);
+                
+            // });
+        }
+        // ctx.beginPath();
+        //         ctx.font = "bold 20px arial";
+        //         ctx.rotate((Math.PI/180)*45);
+        //         //ctx.fillText("Agent Names",300,750);
+        //         ctx.fillText("No of cases handled",0,50);
+        //         ctx.stroke();
+        //         ctx.closePath();
+            }
+        }
+        function clickHandler(){
+            xhr.open("get","data.json",true);
+            xhr.send();
+        }
+        function init(){
+            document.getElementsByTagName("button")[0].addEventListener("click",clickHandler);
+        }
+        document.addEventListener("DOMContentLoaded",init);
+    </script>
+    <!-- <script>
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("readystatechange",xhrHandler);
+        function xhrHandler(evnt){
+            if(xhr.evnt.readyState === 4){
+                console.log(xhr.evnt.readyState);
+            }
+
+        }
+        function clickHandler(){
+        xhr.open("get","data.json",true);
+        xhr.send();
+        }
+        function init(){
+            document.querySelector("button").addEventListener("click",clickHandler);
+        }
+        document.addEventListener("DOMContentLoaded",init);
+    </script> -->
+</head>
+<body>
+    <canvas id="cni" width="800" height="800">
+        <canvas id="can" >
+
+        </canvas>
+    </canvas><br>
+    <button>get graph</button>
+</body>
+</html>

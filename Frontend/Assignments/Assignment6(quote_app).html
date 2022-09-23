@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote</title>
+    <style>
+        section{
+            width: 600px;
+            height: 500px;
+            border: 2px solid red;
+            text-align: center;
+            margin: 20px auto;
+            background: linear-gradient(0deg, rgba(12,238,141,1) 0%, rgba(19,160,168,1) 47%, rgba(147,157,80,1) 100%);
+            
+        }
+       h1{
+            text-align: center;
+            margin: 20px auto;
+        }
+        div{
+            text-align: center;
+            margin: 20px auto;
+            width: 300px;
+            height: 150px;
+           /* line-height: 150px; */
+            color: black;
+            margin-top: 150px;
+        }
+    </style>
+  
+    <script>
+let count =0;
+// var quote;
+ var quote = ["If you are lucky enough to find a way of life you love, you have to find the courage to live it.","Recognizing the need is the primary condition for design.",
+"The world is mud-luscious and puddle-wonderful.","The politicians were talking themselves red, white and blue in the face.",
+"If you change the way you look at things, the things you look at change.","Only the wisest and stupidest of men never change.",
+"The power of the computer is starting to spread.","Be still and cool in thine own mind and spirit.",
+"The secret was to just be cool, stay in God's graces, and work it out.","The most I can do for my friend is simply be his friend."];
+// window.onload = function(){
+//     if(count = 0){
+// document.getElementById("intrvl").innerHTML = quote[0];
+//     }
+// }
+window.onload = function(){
+    let rn = Math.ceil(Math.random()*(quote.length))
+    document.getElementById("intrvl").textContent = quote[rn];
+    wi = setInterval(function(){ 
+            let rn = Math.ceil(Math.random()*(quote.length))
+            document.getElementById("intrvl").textContent = quote[rn];
+            
+        }, 20000);
+}
+</script>
+</head>
+<body>
+    <section>
+    <h1>quotes</h1>
+    <div id="qte">
+    <h2><span id="intrvl"></span></h2>
+    </div>
+    </section>
+</body>
+</html>
