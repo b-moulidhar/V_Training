@@ -39,7 +39,7 @@
                
                 ctx.moveTo(750, 700);
                 ctx.lineTo(100, 700);
-                ctx.lineTo(100, 100);
+                ctx.lineTo(100, 80);
                 
                 ctx.stroke();
                 ctx.closePath();
@@ -58,9 +58,9 @@
                 ctx.stroke();
                 ctx.closePath();
 
-                ctx.beginPath();
+               ctx.beginPath();
                 ctx.font = "bold 20px arial";
-                ctx.fillText("Agent Names",300,750);
+                ctx.fillText("Agent Names",350,770);
                 ctx.fillText("No of cases handled",300,250);
                 ctx.stroke();
                 ctx.closePath();
@@ -68,10 +68,7 @@
                
                 ctx.font = "bold 16px arial";
                 ctx.fillStyle = "black";
-                ctx.fillText("100 -",65,600);
-                ctx.fillText("200 -",65,500);
-                ctx.fillText("300 -",65,400);
-                ctx.fillText("400 -",65,300);
+                ctx.fillText(i*100+" -",65,700-(i*100));
                 
             // });
         }
