@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.6.1.js"></script>
+    <script>
+        $(()=>{
+            //basic filters
+            // // $("li:first,li:last").css("border","2px solid green");
+            // $("li:odd").css("border","2px solid green");
+            // $("li:even").css("border","2px solid green");
+            // $("li:eq(3)").css("border","2px solid green");
+            // $("li:gt(3)").css("border","2px solid green");
+            // $("li:lt(3)").css("border","2px solid green");
+            // $(":header").css("border","2px solid green");
+            // $("li:not(li:eq(3))").css("border","2px solid green");
+
+            //content filters
+            // $("li:contains(ordered list 3)").css("border","2px solid green");
+            // $("li:contains(list item 2)").css("border","2px solid green");
+    //  $("li:has(.box1)").css("border","2px solid green");
+            // $("li:parent()").css("border","2px solid green");
+
+            // visibilty filters
+            // alert($(":hidden").text);
+            // $("li:visible").css("border","2px solid green");
+
+            //attribute filters
+            // $("p[id^=player]").css("border","2px solid green");
+            // $("ol>li[class!=box4]").css("border","2px solid green");
+            // $("ol>li[class$=4]").css("border","2px solid green");
+            $("ol>li[class*=4]").css("border","2px solid green");
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+    </ul>
+    <h1 style="display: none;">heading 1</h1>
+    <ol>
+        <li class="box1">ordered list 1</li>
+        <li class="box2">ordered list 2</li>
+        <li class="box3">ordered list 3</li>
+        <li class="box4">ordered list 4</li>
+        <li class="box5">ordered list 5</li>
+    </ol>
+    <h2>heading 2</h2>
+    <p id="player 1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores ratione beatae reiciendis tempora, quam placeat praesentium sed error cum architecto eius rem perferendis in, nobis, ad autem odit? Magni, distinctio!</p>
+    <p id="player2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus minima hic sit, corrupti repellendus accusantium, rerum vel saepe deserunt similique consequatur nulla mollitia. Quisquam voluptatum asperiores consequatur omnis enim maxime?</p>
+    
+</body>
+</html>

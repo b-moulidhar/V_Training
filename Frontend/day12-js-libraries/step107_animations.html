@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 200px;
+            margin: auto;
+        }
+        .container{
+            width: 200px;
+            margin: auto;
+            background-color: red;
+            height: 100px;
+        }
+    </style>
+    <script src="lib/jquery-3.6.1.js"></script>
+    <script>
+        $(()=>{
+            $("button").eq(0).click(function(){
+                $(".container").show();
+            })
+            $("button").eq(1).click(function(){
+                $(".container").hide();
+            })
+            $("button").eq(2).click(function(){
+                $(".container").show(1000);
+            })
+            $("button").eq(3).click(function(){
+                $(".container").hide(1000);
+            })
+            $("button").eq(4).click(function(){
+                $(".container").fadeIn();
+            })
+            $("button").eq(5).click(function(){
+                $(".container").fadeOut();
+            })
+            $("button").eq(6).click(function(){
+                $(".container").fadeIn(1000);
+            })
+            $("button").eq(7).click(function(){
+                $(".container").fadeOut(1000);
+            })
+            $("button").eq(8).click(function(){
+                $(".container").fadeTo(1000,0.5);
+            })
+            $("button").eq(9).click(function(){
+                $(".container").fadeTo(1000,1);
+            })
+            $("button").eq(10).click(function(){
+                $(".container").toggle(1000);
+            })
+            $("button").eq(11).click(function(){
+                $(".container").slideDown();
+            })
+            $("button").eq(12).click(function(){
+                $(".container").slideUp();
+            })
+           
+        })
+
+    </script>
+</head>
+<body>
+    <button>show</button>
+    <button>hide</button>
+    <button>show in 1s</button>
+    <button>hide in 1s</button>
+    <button>fade out</button>
+    <button>fade in </button>
+    <button>fade out</button>
+    <button>fade in in 1s</button>
+    <button>fade out in 1s</button>
+    <button>fade to 0.5</button>
+    <button>fade to 1</button>
+    <button>toggle</button>
+    <button>slideDown</button>
+    <button>slideUp</button>
+    <div class="container">
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* li{
+            border: 2px dotted green;
+            padding: 2px
+            ;
+        } */
+    </style>
+    <script src="lib/jquery-3.6.1.js"></script>
+    <script>
+        $(()=>{
+            // alert($("ol li,p").length);
+            // $("li").first().css("border","2px solid yellowgreen");
+            // $("li").first().next().css("border","2px solid yellowgreen");
+            // $("li").first().next().next().css("border","2px solid yellowgreen");
+            //  $("li").first().nextAll().css("border","2px solid yellowgreen");
+            // $("li").last().prev().css("border","2px solid yellowgreen");
+            // $("li").last().prevAll().css("border","2px solid yellowgreen");
+            // $("li").last().prev().css("border","2px solid yellowgreen").end().css("background-color","yellow");
+            // $("li").append("Hello lists").css("border","2px dotted yellowgreen");
+            // $(".list5").appendTo(".list2").css("border","2px dotted yellowgreen");
+            // $(".list5").prepend(".list2").css("border","2px dotted yellowgreen");
+            // $(".list5").prependTo(".list2").css("border","2px dotted yellowgreen");
+            // $(".list5").after(".list2").css("border","2px dotted yellowgreen");
+            // $(".list5").before(".list2").css("border","2px dotted yellowgreen");
+            // $(".list5").insertAfter(".list2").css("border","2px dotted yellowgreen");
+            // $(".list5").insertBefore(".list2").css("border","2px dotted yellowgreen");
+            $("li").find('.a').css("border","2px dotted yellowgreen");
+        })
+    </script>
+</head>
+<body>
+    <ol>
+        <li class="list1">list items 1</li>
+        <li class="list2">list items 2</li>
+        <li class="list3">list items 3</li>
+        <li class="list4">list items 4
+            <ol>
+                <li>items</li>
+                <li>items</li>
+                <li>items</li>
+                <li class="a">
+                    list nested
+                </li>
+            </ol>
+        </li>
+        <li class="list5">list items 5</li>
+        <li class="list6">list items 6</li>
+        <li class="list7">list items 7</li>
+        <li class="list8">list items 8</li>
+        <li class="list9">list items 9</li>
+        <li class="list10">list items 10</li>
+    </ol>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae similique, ipsam tenetur in minus illo, dolores harum vel ducimus odio tempora molestias expedita laborum accusamus corrupti recusandae optio accusantium fuga.</p>
+    
+</body>
+</html>

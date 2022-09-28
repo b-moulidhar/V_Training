@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 600px;
+            height: 400px;
+            background-color: aquamarine;
+        }
+        .container div{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: rgb(6, 67, 47);
+            float: left;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+        $(()=>{
+            $('.container').on("click",'.box',function(){
+                $('.container').append('<div class="box"/>');
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>
+        click
+    </button>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

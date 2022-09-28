@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 800px;
+            color: aliceblue;
+            background-color: darkmagenta;
+            overflow: auto;
+            height: 400px;
+        }
+        .container p{
+           margin: 10px;
+        }
+    </style>
+    <script src="lib/jquery-3.6.1.js"></script>
+    <script>
+        // var pr = null;
+        // $(()=>{
+        //     $("button").click(function(){
+        //         $('.container').load("data/data.txt"); //works in live server
+        //     })
+        // })
+//         $(()=>{
+//         $("button").click(function(){
+//             pr = $.getJSON("data/data.json");
+//              pr.fail(function(err,s,jqxhr){
+//                 console.log(err);
+//              })
+//             pr.done(function(res,status,jqxhr){
+//                 $(res.root.participant).each(function(idx,pro){
+//                 $('.container').append("<p>"+pro.firstname+"</p>");
+            
+//             })
+//         })
+//     })
+// })
+        $(()=>{
+            $("button").click(function(){
+            var pr = $.ajax({
+                url:"data/data.txt",
+                cache:false,
+                timeout:2000
+            });
+            pr.done(function(res,sts,jqxhr){
+                // $(res.root.participant).each(function(idx,val){
+                //     $(".container").append("<p>"+val.firstname+"</p>");
+                // })
+                $(".container").append(res);
+            })
+        })
+    })
+    </script>
+</head>
+<body>
+    <button>click</button>
+    <div class="container"></div>
+</body>
+</html>
