@@ -1,0 +1,16 @@
+{
+  "name": "mouli786",
+  "version": "1.1.0",
+  "description": "test module ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mouli786",
+    "valtech",
+    "firstnpm_pjct"
+  ],
+  "author": "Moulidhar B",
+  "license": "ISC"
+}

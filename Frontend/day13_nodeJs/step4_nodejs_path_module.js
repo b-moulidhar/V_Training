@@ -1,0 +1,10 @@
+var path = require("path");
+// console.log(path.basename("C:/Frontend/day13_nodeJs/step1_node.js"));
+// console.log(path.dirname("C:/Frontend/day13_nodeJs/step1_node.js"));
+// console.log(path.resolve("C:/Frontend/day13_nodeJs/step1_node.js"));
+// var list = ["users"];
+// var files = ["index.html"];
+// console.log(path.join(list[0],files[0]));
+var list = ["users","guest","admin"];
+var files = ["index.html","profile.html","details.html"];
+console.log(path.join(list[Math.floor(Math.random()*list.length)],files[Math.floor(Math.random()*files.length)]));
