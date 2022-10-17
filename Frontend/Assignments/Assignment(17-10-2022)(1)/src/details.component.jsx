@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import {BrowserRouter,Routes,Route,NavLink} from "react-router-dom";
+import {BrowserRouter,Routes,Route,NavLink,Link} from "react-router-dom";
 import App from "./app";
 import data from "./datas/heroes data.json"
 let DetailsComp = ()=>{
@@ -7,6 +7,9 @@ let DetailsComp = ()=>{
     return <div> 
     
         <h1>Details </h1>
+        <h2>
+        <Link to="/"  >Home</Link>
+        </h2>
         {
             data.heroes.map((val,idx)=>{
                 if(val.id == prms.id){
