@@ -1,102 +1,50 @@
-let redux = require("redux")
+const redux = require("redux");
 let createStore = redux.legacy_createStore;
-let combineReducers = redux.combineReducers;
+let fs = require("fs")
+let process = require("process");
+const { argv } = require("process");
+let text;
+if(process.argv[2]){
+   text= `firstname ${process.argv[2]} 
+lastname ${process.argv[3]} 
+city ${process.argv[4]} \n
+`
+}else{
+    text = "";
+}
+const USERS_REQUEST = "USERS_REQUEST"
 
-//------------------------------------
-const DELETEHERO = "DELETEHERO";
-const ADDHERO = "ADDHERO";
-const SETHERO = "SETHERO";
-//
-const DELETEMOVIE = "DELETEMOVIE";
-const ADDMOVIE = "ADDMOVIE";
-const SETMOVIE = "SETMOVIE";
-//------------------------------------------------------------------
-let delHero = ()=>{
+let data = new Array();
+
+fs.appendFile("data.txt",text, 'utf-8',(err)=>{ 
+    if(err){
+    console.log(err);
+    }else {
+    console.log("Contents of file appended");
+    //   fs.readFileSync("../data/test.txt", "utf8"));
+  }});
+
+let fetchUsers = ()=>{
     return {
-        type : DELETEHERO
-    }
-}
-let addHero = ()=>{
-    return {
-        type : ADDHERO
-    }
-}
-let setHero = (num)=>{
-    return {
-        type : SETHERO,
-        payload : num
-    }
-}
-//-------------------------
-let delmovie = ()=>{
-    return {
-        type : DELETEMOVIE
-    }
-}
-let addmovie = ()=>{
-    return {
-        type : ADDMOVIE
-    }
-}
-let setmovie = (num)=>{
-    return {
-        type : SETMOVIE,
-        payload : num
+         type: USERS_REQUEST,
+         
     }
 }
 
-let initialHerostate = {
-    Heroes : 10
-}
-let initialMoviestate = {
-    Movies : 20
-}
-//-----------------------------------------------------------------------------
+data.push( fs.readFileSync("data.txt","utf-8"))
 
-let heroreducer = (state = initialHerostate, action)=>{
+let reducer = (state,action)=>{
     switch(action.type){
-        case DELETEHERO : return {...state, Heroes:state.Heroes-1};
-        case ADDHERO : return {...state, Heroes:state.Heroes+1};
-        case SETHERO : return {...state, Heroes: action.payload};
-        default : return state;
+        case USERS_REQUEST : return data;
+       
+        default : return state
     }
+}
 
-};
-//------------------------------------------------------------
-let moviereducer = (state = initialMoviestate, action)=>{
-    switch(action.type){
-        case DELETEMOVIE : return {...state, Movies:state.Movies-1};
-        case ADDMOVIE : return {...state, Movies:state.Movies+1};
-        case SETMOVIE : return {...state, Movies: action.payload};
-        default : return state;
-    }
+let store = createStore(reducer);
 
-};
-let rootReducer = combineReducers({
-    Heroes : heroreducer,
-    Movies : moviereducer
-})
-let store = createStore(rootReducer);
+store.subscribe(()=>{
+    console.log(store.getState());
+});
 
-let unsubscribe = store.subscribe(()=>{
-    // console.log(store.getState().Movies);
-    console.log(store.getState().Heroes);
-})
-
-store.dispatch( delHero());
-store.dispatch( addHero());
-store.dispatch( delHero());
-store.dispatch( addHero());
-store.dispatch( delHero());
-store.dispatch( addHero());
-store.dispatch( setHero(99));
-//---------------------------------
-store.dispatch( delmovie());
-store.dispatch( addmovie());
-store.dispatch( delmovie());
-store.dispatch( addmovie());
-store.dispatch( delmovie());
-store.dispatch( addmovie());
-store.dispatch( setmovie(99));
-
-
+store.dispatch(fetchUsers());
